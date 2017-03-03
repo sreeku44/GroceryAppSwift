@@ -1,26 +1,239 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9ec-KY-cjr">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Grocery Catagory Table View Controller-->
+        <scene sceneID="For-aT-TyH">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="9bC-UW-aK6" customClass="GroceryCatagoryTableViewController" customModule="GroceryAppSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="A0b-GS-8Vb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GroceryCategoryCell" id="5fo-L5-Eg1">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5fo-L5-Eg1" id="RGW-au-NVa">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="L5m-da-sfG" kind="show" id="9rb-tI-WWa"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9bC-UW-aK6" id="Yep-nK-193"/>
+                            <outlet property="delegate" destination="9bC-UW-aK6" id="Bmb-2y-0FV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Cxp-lf-VkY">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="Eu0-bC-dZN">
+                            <connections>
+                                <segue destination="bn7-6P-drp" kind="presentation" identifier="AddGroceryCategorySegue" id="bxF-Ni-O1W"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Pn-cE-gDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="114" y="-511"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="sNK-qF-DNB">
+            <objects>
+                <tableViewController id="L5m-da-sfG" customClass="GroceryItemTableViewController" customModule="GroceryAppSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eKo-0B-Abk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroceryItemCell" id="qYK-Dq-OXY">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qYK-Dq-OXY" id="NTb-jM-ukX">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="L5m-da-sfG" id="sv4-Yn-7mn"/>
+                            <outlet property="delegate" destination="L5m-da-sfG" id="nIi-zY-W2c"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="zis-Te-beB">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="rdd-4m-blK">
+                            <connections>
+                                <segue destination="Gpc-rO-bbR" kind="presentation" identifier="AddGroceryItemSegue" id="lqi-Dx-O2p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8R6-Dr-Wbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="234"/>
+        </scene>
+        <!--Add Grocery Item View Controller-->
+        <scene sceneID="dxk-VH-dFQ">
+            <objects>
+                <viewController id="k8S-yZ-0tC" customClass="AddGroceryItemViewController" customModule="GroceryAppSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BqD-Yj-BBp"/>
+                        <viewControllerLayoutGuide type="bottom" id="R15-Sc-Tiw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lPt-Zz-PIw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zoq-vN-yjh">
+                                <rect key="frame" x="91" y="234" width="216" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.89637381849999997" blue="0.86677099849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zoq-vN-yjh" firstAttribute="top" secondItem="BqD-Yj-BBp" secondAttribute="bottom" constant="170" id="svH-eE-u9j"/>
+                            <constraint firstItem="Zoq-vN-yjh" firstAttribute="leading" secondItem="lPt-Zz-PIw" secondAttribute="leadingMargin" constant="75" id="xFf-La-87P"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zoq-vN-yjh" secondAttribute="trailing" constant="52" id="ycv-HT-7D5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Mm-hN-XCs">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="3IB-Nf-VXV">
+                            <connections>
+                                <action selector="closeButtonPressed:" destination="k8S-yZ-0tC" id="5IP-qi-kQJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="hKg-gs-rYp">
+                            <connections>
+                                <action selector="saveButtonPresse:" destination="k8S-yZ-0tC" id="n95-H8-yTb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="groceryItemText" destination="Zoq-vN-yjh" id="0eg-vd-4vP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y4q-In-dIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1936.8" y="232.53373313343329"/>
+        </scene>
+        <!--Add Grocery Catagory View Controller-->
+        <scene sceneID="BzN-gv-77I">
+            <objects>
+                <viewController id="bn7-6P-drp" customClass="AddGroceryCatagoryViewController" customModule="GroceryAppSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5WT-X2-wo3"/>
+                        <viewControllerLayoutGuide type="bottom" id="eEB-6N-WRR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3kv-VK-8Kb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JcR-JL-MaC">
+                                <rect key="frame" x="70" y="194" width="234" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AQQ-OF-RhP"/>
+                                    <constraint firstAttribute="width" constant="234" id="g4X-Ap-KC3"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgA-cN-Dsw">
+                                <rect key="frame" x="111" y="260" width="152" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="Ja8-qk-pG3"/>
+                                    <constraint firstAttribute="height" constant="30" id="nIS-gS-vn8"/>
+                                </constraints>
+                                <state key="normal" title="Add Grocery Catagory"/>
+                                <connections>
+                                    <action selector="addGroceryCategoryButton:" destination="bn7-6P-drp" eventType="touchUpInside" id="Ipy-1Z-TC0"/>
+                                </connections>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ii-Vi-mCj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Close" id="Gdb-Qu-zca">
+                                        <connections>
+                                            <action selector="closeButtonPressedWith_sender:" destination="bn7-6P-drp" id="D5A-9e-MYW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="SO3-Uv-DoQ"/>
+                                    <barButtonItem title="Save" id="zbv-Xo-VnG"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96373320360000003" green="0.9129156383" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FgA-cN-Dsw" firstAttribute="top" secondItem="JcR-JL-MaC" secondAttribute="bottom" constant="36" id="7FF-ll-Nso"/>
+                            <constraint firstItem="4ii-Vi-mCj" firstAttribute="leading" secondItem="3kv-VK-8Kb" secondAttribute="leading" id="EcD-er-d1a"/>
+                            <constraint firstItem="JcR-JL-MaC" firstAttribute="top" secondItem="4ii-Vi-mCj" secondAttribute="bottom" constant="150" id="Noa-8j-e3T"/>
+                            <constraint firstItem="FgA-cN-Dsw" firstAttribute="leading" secondItem="3kv-VK-8Kb" secondAttribute="leadingMargin" constant="95" id="QsF-LH-xGk"/>
+                            <constraint firstItem="FgA-cN-Dsw" firstAttribute="top" secondItem="JcR-JL-MaC" secondAttribute="bottom" constant="36" id="ZgI-FL-3ST"/>
+                            <constraint firstItem="JcR-JL-MaC" firstAttribute="leading" secondItem="3kv-VK-8Kb" secondAttribute="leading" constant="70" id="ebL-yq-Out"/>
+                            <constraint firstAttribute="trailing" secondItem="4ii-Vi-mCj" secondAttribute="trailing" id="mIW-Vz-war"/>
+                            <constraint firstItem="4ii-Vi-mCj" firstAttribute="top" secondItem="3kv-VK-8Kb" secondAttribute="top" id="q09-tz-fpD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FgA-cN-Dsw" secondAttribute="trailing" constant="96" id="veA-rh-b4Z"/>
+                            <constraint firstAttribute="trailing" secondItem="JcR-JL-MaC" secondAttribute="trailing" constant="71" id="zeT-oB-m6w"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="groceryCategoryText" destination="JcR-JL-MaC" id="s5V-wf-k2l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6zl-em-O11" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="998" y="-487"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QmQ-7a-tdm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9ec-KY-cjr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gvU-YQ-Kmo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9bC-UW-aK6" kind="relationship" relationship="rootViewController" id="4ds-Ua-jNK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1RJ-4r-06R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-639" y="-511"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="s0P-eE-Ra7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gpc-rO-bbR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a7y-uP-xqc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="k8S-yZ-0tC" kind="relationship" relationship="rootViewController" id="qo9-fU-pfz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oyX-sv-Y2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="997.60000000000002" y="232.53373313343329"/>
         </scene>
     </scenes>
 </document>
